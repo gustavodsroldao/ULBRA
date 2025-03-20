@@ -9,3 +9,14 @@ elif idade < 18 or idade >= 70:
     print("Seu voto é opcional")
 else:
     print("Seu voto é obrigatório")
+
+
+# o também uma forma mais limap e correta:
+
+idade = int(input("Digite sua idade: "))
+if idade < 16:
+    print("Você não pode votar")
+elif 18<= idade < 70:
+    print("Seu voto é obrigatório")
+else:
+    print("Seu voto é opcional")
