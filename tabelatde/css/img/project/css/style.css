@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'); /* Importa a fonte Poppins do Google Fonts */
+
+body {
+    font-family: 'Poppins', sans-serif; /* Define a fonte principal do corpo do documento */
+    background-color: #f8f9fa; /* Define a cor de fundo da página */
+    padding: 40px; /* Adiciona espaçamento interno ao corpo da página */
+}
+
+.table-container {
+    width: 100%; /* Faz o contêiner ocupar toda a largura disponível */
+    max-width: 1250px; /* Define uma largura máxima para evitar que a tabela fique muito grande */
+    margin: auto; /* Centraliza o contêiner horizontalmente */
+    background: #fff; /* Define a cor de fundo como branca */
+    border-radius: 12px; /* Adiciona cantos arredondados ao contêiner */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra ao contêiner */
+    padding: 20px; /* Adiciona espaçamento interno */
+}
+
+.table {
+    width: 100%; /* Faz a tabela ocupar toda a largura do contêiner */
+    border-collapse: collapse; /* Remove os espaços entre as bordas das células da tabela */
+}
+
+thead {
+    background-color: #e5e7eb; /* Define a cor de fundo do cabeçalho da tabela */
+}
+
+th {
+    text-align: left; /* Alinha o texto à esquerda dentro dos cabeçalhos */
+    padding: 12px; /* Adiciona espaçamento interno aos cabeçalhos */
+    font-weight: 600; /* Define o peso da fonte para negrito */
+}
+
+td {
+    padding: 12px; /* Adiciona espaçamento interno às células da tabela */
+    border-bottom: 1px solid #e5e7eb; /* Adiciona uma linha inferior separando as células */
+    vertical-align: middle; /* Alinha o conteúdo verticalmente ao centro */
+    white-space: nowrap; /* Impede que o texto quebre para a próxima linha */
+    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse os limites da célula */
+}
+
+.profile-pic {
+    width: 35px; /* Define a largura da imagem de perfil */
+    height: 35px; /* Define a altura da imagem de perfil */
+    border-radius: 50%; /* Deixa a imagem de perfil redonda */
+}
+
+.badge {
+    padding: 6px 12px; /* Adiciona espaçamento interno ao selo */
+    border-radius: 12px; /* Arredonda as bordas do selo */
+    font-size: 12px; /* Define o tamanho da fonte */
+    font-weight: 600; /* Define a fonte como negrito */
+    display: inline-block; /* Permite que o selo se comporte como um bloco, mas mantendo o tamanho do conteúdo */
+}
+
+.online {
+    background-color: #d4edda; /* Define a cor de fundo do selo para usuários online */
+    color: #155724; /* Define a cor do texto do selo para usuários online */
+}
+
+.offline {
+    background-color: #f8d7da; /* Define a cor de fundo do selo para usuários offline */
+    color: #721c24; /* Define a cor do texto do selo para usuários offline */
+}
+
+.action-icon {
+    cursor: pointer; /* Altera o cursor para indicar que o ícone é clicável */
+    margin-right: 10px; /* Adiciona espaçamento à direita dos ícones */
+    font-size: 16px; /* Define o tamanho do ícone */
+    color: #6c757d; /* Define a cor padrão do ícone */
+}
+
+.action-icon:hover {
+    color: #343a40; /* Muda a cor do ícone ao passar o mouse sobre ele */
+}
+
+.user-info {
+    display: flex; /* Define o layout flexível para alinhar a imagem e o texto horizontalmente */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    gap: 10px; /* Adiciona espaçamento entre a imagem e o nome do usuário */
+    max-width: 250px; /* Define um limite máximo para a largura */
+    white-space: nowrap; /* Impede que o texto quebre para a próxima linha */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites */
+    text-overflow: ellipsis; /* Adiciona "..." ao final do texto cortado */
+}
