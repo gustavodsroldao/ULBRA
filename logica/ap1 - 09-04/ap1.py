@@ -37,7 +37,7 @@
 # Se houver empate entre duas ou mais áreas, o algoritmo retorna todas as áreas empatadas
 # O jogo deve ser escrito em um algoritmo utilizando python e fluxograma.
 
-introducao = input("Com base nas perguntas abaixo, escolha a área que mais combina com você. Responda de 1 a 5, onde 1 é 'Discordo totalmente' e 5 é 'Concordo totalmente'.\n\n")
+introducao = print("Com base nas perguntas abaixo, escolha a área que mais combina com você. Responda de 1 a 5, onde 1 é 'Discordo totalmente' e 5 é 'Concordo totalmente'.\n\n")
 
 a1 = int(input("Gosto de programar e resolver problemas com código.\n"))
 a2 = int(input("Tenho interesse em criar aplicativos e sites.\n"))
@@ -75,14 +75,3 @@ elif soma_b == soma_c and soma_b > soma_a:
     print("Você tem afinidade com as áreas de Produtos e Qualidade.")
 else:
     print("Você tem afinidade com as áreas de Desenvolvimento de Software, Produtos e Qualidade.")
-
-
-
-
-
-
-
-
-
-
-
