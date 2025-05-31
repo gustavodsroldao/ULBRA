@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mim | Meu Portfólio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    
+    <!-- Cabeçalho  -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Gustavo</div>
+                <ul class="menu">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="./about.html">Sobre</a></li>
+                    <li><a href="./projects.html">Projetos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal  -->
+    <main class="about-page">
+        <div class="container">
+            <h1 class="page-title">Sobre mim</h1>
+
+            <!-- Perfil -->
+            <div class="profile-card">
+                <div class="profile-image">
+                    <img src="../images/meabout.jpg" alt="imagem de perfil/Gustavo">
+                </div>
+                <div class="profile-info">
+                    <h2>Olá, eu sou o Gustavo!</h2>
+                    <p>
+                        Sou um desenvolvedor full stack apaixonado pela programação e pelo aprendizado constante.
+                        Tenho 1 ano de experiência em desenvolvimento de software, onde trabalhei em projetos
+                        desafiadores que me permitiram aprimorar minhas habilidades técnicas e de resolução de
+                        problemas.
+                        No último ano tenho trabalhado com diversas tecnologias e frameworks para entregar soluções
+                        eficientes e escaláveis.
+                    </p>
+                    <p>
+                        Minha jornada na programação começou realmente em 2021, quando desenvolvi meus primeiros
+                        projetos.
+                        Desde então, venho aprimorando minhas habilidades e expandindo meu conhecimento em diferentes
+                        áreas do desenvolvimento web.
+                    </p>
+                    <div class="skills-tags">
+                        <span class="skill-tag">Flutter</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+
+                <!-- Experiência profissional -->
+                <section class="experience-section">
+                    <h2 class="section-title">Experiência Profissional</h2>
+
+                    <div class="experience-container">
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <h3>Desenvolvedor Full Stack</h3>
+                                <p class="experience-date">Outubro 2024 - Presente</p>
+                            </div>
+                            <h4>Cervantes Tecnologia</h4>
+                            <ul class="experience-list">
+                                <li>Desenvolvimento de aplicações desktop e mobile utilizando Flutter.</li>
+                                <li>Colaboração em equipe ágil para entrega de projetos dentro do prazo.</li>
+                                <li>Implementação de soluções escaláveis e eficientes.</li> 
+                            </ul>
+                        </div>
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <h3>Entregas</h3>
+                                <p class="experience-date">Dezembro 2022 - Agosto 2024</p>
+                            </div>
+                            <h4>Fruteira PegPag</h4>
+                            <ul class="experience-list">
+                                <li>Colaboração em equipe ágil para entregas dentro do prazo.</li>
+                                <li>Organizações de rotas de entregas eficientes.</li> 
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Formação acadêmica -->
+                <section class="education-section">
+                    <h2 class="section-title">Formação Acadêmica</h2>
+
+                    <div class="table-container">
+                        <table class="education-table">
+                            <thead>
+                                <tr>
+                                    <th>Curso</th>
+                                    <th>Instituição</th>
+                                    <th>Ano de Conclusão</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Técnologo em Análise e Desenvolvimento de Sistemas</td>
+                                    <td>Universidade Luterâna do Brasil</td>
+                                    <td>2025 - 2027</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé  -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; <span id="year"></span> Gustavo da Silveira Roldão. Todos os direitos reservados.</p>
+                <div class="footer-links">
+                    <a href="">Linkedin</a>
+                    <a href="">Github</a>
+                    <a href="">Instagram</a>
+                    <a href="">Whatsapp</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mim | Meu Portfólio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Gustavo   </div>
+                <ul class="menu">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../directories/about.html">Sobre</a></li>
+                    <li><a href="../directories/projects.html">Projetos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="project-page">
+        <div class="container">
+            <h1 class="page-title">GRVendas - Sistema de Automação Comercial</h1>
+
+            <!-- Imagem do projeto -->
+            <div class="project-hero">
+                <img src="../images/sistema-pdv.jpg" alt="imagem do projeto PDV">
+            </div>
+
+            <!-- Detalhes do projeto -->
+            <div class="project-details">
+                <div class="projects-tag">
+                    <span class="project-tag">C#</span>
+                    <span class="project-tag">Windows Forms</span>
+                </div>
+
+                <h2>Sobre o projeto</h2>
+                <p>
+                    O projeto GRVendas (PDV), é um sistema de automação comercial desenvolvido em C# utilizando Windows Forms.
+                    O objetivo principal do projeto é fornecer uma solução eficiente para o gerenciamento de vendas,
+                    estoque e relatórios financeiros em estabelecimentos comerciais. Com uma interface amigável e
+                    funcionalidades robustas,
+                    o PDV visa otimizar o processo de vendas e melhorar a experiência do usuário.
+                </p>
+
+                <h2>Funcionalidades</h2>
+                <ul class="features-list">
+                    <li>Cadastro de produtos e serviços</li>
+                    <li>Gerenciamento de estoque</li>
+                    <li>Emissão de notas fiscais</li>
+                    <li>Relatórios de vendas e desempenho</li>
+                    <li>Integração com dispositivos de pagamento</li>
+                </ul>
+
+                <h2>Desafios e solções</h2>
+                <p>
+                    Durante o desenvolvimento do projeto, enfrentei diversos desafios,
+                    como a integração com dispositivos de pagamento e a criação de relatórios personalizados.
+                    Para superar esses obstáculos, utilizei bibliotecas e APIs específicas,
+                    além de realizar testes rigorosos para garantir a funcionalidade e a segurança do sistema.
+                </p>
+                <div class="projects-links">
+                    <a href="https://github.com/gustavodsroldao" class="btn btn-secondary" target="_blank">Ver código no Github</a>
+                </div>
+
+                <section class="other-projects">
+                    <h2 class="section-title">Outros projetos</h2>
+                    <div class="other-projects-grid">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="../images/rimberio.png" alt="Aplicativo Mobile">
+                            </div>
+                            <div class="project-info">
+                                <h3>Rimberio</h3>
+                                <p>Desenvolvimento de um Website completo para uma hamburgueria.</p>
+                                <a href="#" class="project-link">Ver detalhes →</a>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="../images/mobile.jpg" alt="Aplicativo Mobile">
+                            </div>
+                            <div class="project-info">
+                                <h3>Aplicativo Mobile</h3>
+                                <p>Desenvolvimento de app mobile para iOS e Android usando React Native.</p>
+                                <a href="#" class="project-link">Ver detalhes →</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA -->
+                <div class="cta-section">
+                    <h2>Gostou do meu trabalho?</h2>
+                    <p>Estou disponível para novos projetos e oportunidades. Vamos trabalhar juntos!</p>
+                    <a href="instagram.com/gustavodasilveirasr" class="btn btn-accent-project">Entre em Contato</a>
+                </div>
+            </div>
+    </main>
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; <span id="year"></span> Seu Nome. Todos os direitos reservados.</p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/gustavodasilveiraroldao/">LinkedIn</a>
+                    <a href="https://github.com/gustavodsroldao">GitHub</a>
+                    <a href="https://instagram.com/gustavodasilveirasr">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
