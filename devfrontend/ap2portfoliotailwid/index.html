@@ -19,12 +19,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style type="text/tailwindcss">
         @layer components {
-            /* Container */
+            /* uso do layer components como foi ensinado em aula */
+            /* container */
             .container-custom {
                 @apply w-[90%] max-w-6xl mx-auto px-4;
             }
 
-            /* Typography */
+            /* tipografia */
             .section-title {
                 @apply text-4xl font-bold text-gray-800 mb-2 text-center relative pb-2;
             }
@@ -50,7 +51,7 @@
                 @apply text-yellow-300;
             }
 
-            /* Buttons */
+            /* buttons */
             .btn {
                 @apply inline-block px-6 py-3 rounded-full font-semibold text-center cursor-pointer transition-all duration-300;
             }
@@ -71,7 +72,7 @@
                 @apply bg-gray-200 text-gray-800 hover:bg-gray-300;
             }
 
-            /* Cards */
+            /* cards */
             .card {
                 @apply bg-white rounded-lg shadow-md transition-all duration-300;
             }
@@ -125,7 +126,7 @@
                 @apply font-semibold text-gray-800;
             }
 
-            /* Forms */
+            /* forms */
             .form-group {
                 @apply mb-6;
             }
@@ -138,12 +139,12 @@
                 @apply w-full p-3 rounded-lg border border-white/20 bg-white/10 text-white placeholder-white/70 focus:outline-none focus:border-yellow-300;
             }
 
-            /* Social Icons */
+            /* social Icons */
             .social-icon {
                 @apply w-10 h-10 rounded-full bg-white text-orange-800 flex items-center justify-center hover:bg-yellow-300 transition-colors duration-300;
             }
 
-            /* Navigation */
+            /* navigation */
             .nav-link {
                 @apply text-gray-600 font-medium hover:text-orange-800 transition-colors duration-300;
             }
@@ -152,12 +153,12 @@
                 @apply text-orange-800;
             }
 
-            /* Tags */
+            /* tags */
             .tag {
                 @apply bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm;
             }
 
-            /* Progress Bar */
+            /* progress bar */
             .progress-bar {
                 @apply h-2.5 bg-gray-200 rounded-full overflow-hidden mb-2;
             }
@@ -166,7 +167,7 @@
                 @apply h-full bg-orange-800 rounded-full;
             }
 
-            /* Experience Card */
+            /* experience card */
             .experience-card {
                 @apply bg-white p-6 rounded-lg shadow-sm;
             }
@@ -221,7 +222,7 @@
                 @apply w-full h-48 object-cover;
             }
 
-            /* CTA Section */
+            /* cta Section */
             .cta-section {
                 @apply bg-orange-800 text-white p-8 rounded-xl text-center;
             }
@@ -242,16 +243,16 @@
     <header class="bg-white shadow-lg sticky top-0 z-50">
         <div class="container-custom">
             <nav class="flex justify-between items-center py-4">
-                <div class="text-2xl font-bold text-orange-800">Portfolio</div>
+                <div class="text-2xl font-bold text-orange-800">Gustavo</div>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex gap-6">
-                    <a href="#home" class="nav-link active">Inicio</a>
-                    <a href="#sobre" class="nav-link">Sobre</a>
-                    <a href="#skills" class="nav-link">Projetos</a>
+                    <a href="index.html" class="nav-link active">Inicio</a>
+                    <a href="./directories/about.html" class="nav-link">Sobre mim</a>
+                    <a href="./directories/projects.html" class="nav-link">Projetos</a>
                 </div>
 
-                <!-- Mobile Menu Button -->
+                <!-- Menu Button (para celular) -->
                 <button class="md:hidden" onclick="toggleMenu()">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
@@ -260,9 +261,9 @@
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden pb-4">
                 <div class="flex flex-col gap-4">
-                    <a href="#home" class="nav-link">Inicio</a>
-                    <a href="#projects" class="nav-link">Sobre</a>
-                    <a href="#skills" class="nav-link">Projetos</a>
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="./directories/about.html" class="nav-link">Sobre</a>
+                    <a href="./directories/projects.html" class="nav-link">Projetos</a>
 
                 </div>
             </div>
@@ -283,8 +284,8 @@
 
                     <!-- Hero Buttons -->
                     <div class="flex flex-wrap gap-4 justify-center md:justify-start mt-6">
-                        <a href="#projects" class="btn btn-primary">Sobre mim</a>
-                        <a href="#" class="btn btn-outline">Ver projetos</a>
+                        <a href="./directories/about.html" class="btn btn-primary">Sobre mim</a>
+                        <a href="./directories/projects.html" class="btn btn-outline">Ver projetos</a>
                     </div>
                 </div>
 
@@ -312,7 +313,7 @@
                     <div class="project-info">
                         <h3 class="project-title">Sistema PDV</h3>
                         <p class="project-description">Desenvolvimento de uma loja virtual completa com carrinho de compras e sistema de pagamento.</p>
-                        <a href="#" class="project-link">
+                        <a href="./directories/projects.html" class="project-link">
                             Ver Projeto <i class="fas fa-external-link-alt text-sm"></i>
                         </a>
                     </div>
@@ -326,7 +327,7 @@
                     <div class="project-info">
                         <h3 class="project-title">Rimberio</h3>
                         <p class="project-description">Desenvolvimento de uma loja virtual completa com carrinho de compras e sistema de pagamento.</p>
-                        <a href="#" class="project-link">
+                        <a href="./directories/projects.html" class="project-link">
                             Ver Projeto <i class="fas fa-external-link-alt text-sm"></i>
                         </a>
                     </div>
@@ -340,7 +341,7 @@
                     <div class="project-info">
                         <h3 class="project-title">finova</h3>
                         <p class="project-description">Desenvolvimento de SaaS de gestão financeira.</p>
-                        <a href="#" class="project-link">
+                        <a href="./directories/projects.html" class="project-link">
                             Ver Projeto <i class="fas fa-external-link-alt text-sm"></i>
                         </a>
                     </div>

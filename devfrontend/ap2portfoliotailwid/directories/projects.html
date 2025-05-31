@@ -4,24 +4,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Mim | Meu Portfólio</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <!-- Font Awesome para ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Gustavo da Silveira Roldão</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style type="text/tailwindcss">
+        @layer components {
+            /* uso do layer components como foi ensinado em aula */
+            /* container */
+            .container-custom {
+                @apply w-[90%] max-w-6xl mx-auto px-4;
+            }
+
+            /* tipografia */
+            .section-title {
+                @apply text-4xl font-bold text-gray-800 mb-2 text-center relative pb-2;
+            }
+            
+            .section-title::after {
+                content: '';
+                @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-orange-800;
+            }
+
+            .section-title.light {
+                @apply text-white;
+            }
+
+            .section-title.light::after {
+                @apply bg-white;
+            }
+
+            .page-title {
+                @apply text-4xl font-bold text-center text-gray-800 my-8 mb-12;
+            }
+
+            .highlight {
+                @apply text-yellow-300;
+            }
+
+            /* buttons */
+            .btn {
+                @apply inline-block px-6 py-3 rounded-full font-semibold text-center cursor-pointer transition-all duration-300;
+            }
+
+            .btn-primary {
+                @apply bg-white text-orange-800 hover:bg-yellow-300 hover:text-orange-800;
+            }
+
+            .btn-outline {
+                @apply bg-transparent border-2 border-white text-white hover:bg-white hover:text-orange-800;
+            }
+
+            .btn-accent {
+                @apply bg-yellow-300 text-orange-800 hover:bg-yellow-400;
+            }
+
+            .btn-secondary {
+                @apply bg-gray-200 text-gray-800 hover:bg-gray-300;
+            }
+
+            /* cards */
+            .card {
+                @apply bg-white rounded-lg shadow-md transition-all duration-300;
+            }
+
+            .card-hover {
+                @apply hover:shadow-xl hover:-translate-y-2;
+            }
+
+            .project-card {
+                @apply card card-hover overflow-hidden;
+            }
+
+            .project-image {
+                @apply h-48 overflow-hidden;
+            }
+
+            .project-image img {
+                @apply w-full h-full object-cover hover:scale-105 transition-transform duration-500;
+            }
+
+            .project-info {
+                @apply p-6;
+            }
+
+            .project-title {
+                @apply text-xl font-bold text-orange-800 mb-2;
+            }
+
+            .project-description {
+                @apply text-gray-600 mb-4;
+            }
+
+            .project-link {
+                @apply inline-flex items-center gap-2 text-orange-800 font-medium hover:text-orange-600 transition-colors duration-300;
+            }
+
+            /* Skills */
+            .skill-item {
+                @apply text-center p-4;
+            }
+
+            .skill-circle {
+                @apply w-20 h-20 rounded-full bg-orange-100 flex items-center justify-center mx-auto mb-4;
+            }
+
+            .skill-percentage {
+                @apply text-orange-800 font-bold text-xl;
+            }
+
+            .skill-name {
+                @apply font-semibold text-gray-800;
+            }
+
+            /* forms */
+            .form-group {
+                @apply mb-6;
+            }
+
+            .form-label {
+                @apply block mb-2;
+            }
+
+            .form-input {
+                @apply w-full p-3 rounded-lg border border-white/20 bg-white/10 text-white placeholder-white/70 focus:outline-none focus:border-yellow-300;
+            }
+
+            /* social Icons */
+            .social-icon {
+                @apply w-10 h-10 rounded-full bg-white text-orange-800 flex items-center justify-center hover:bg-yellow-300 transition-colors duration-300;
+            }
+
+            /* navigation */
+            .nav-link {
+                @apply text-gray-600 font-medium hover:text-orange-800 transition-colors duration-300;
+            }
+
+            .nav-link.active {
+                @apply text-orange-800;
+            }
+
+            /* tags */
+            .tag {
+                @apply bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm;
+            }
+
+            /* progress bar */
+            .progress-bar {
+                @apply h-2.5 bg-gray-200 rounded-full overflow-hidden mb-2;
+            }
+
+            .progress-fill {
+                @apply h-full bg-orange-800 rounded-full;
+            }
+
+            /* experience card */
+            .experience-card {
+                @apply bg-white p-6 rounded-lg shadow-sm;
+            }
+
+            .experience-header {
+                @apply flex flex-col md:flex-row md:justify-between md:items-center mb-2;
+            }
+
+            .experience-title {
+                @apply text-xl font-bold text-orange-800;
+            }
+
+            .experience-date {
+                @apply text-gray-500 text-sm;
+            }
+
+            .experience-company {
+                @apply text-gray-600 mb-4;
+            }
+
+            .experience-list {
+                @apply list-disc list-inside text-gray-600 space-y-2;
+            }
+
+            /* Table */
+            .table-container {
+                @apply bg-white rounded-lg shadow-sm overflow-hidden;
+            }
+
+            .table {
+                @apply w-full border-collapse;
+            }
+
+            .table th {
+                @apply p-4 text-left bg-orange-800 text-white;
+            }
+
+            .table td {
+                @apply p-4 border-b border-gray-200 last:border-b-0;
+            }
+
+            /* Gallery */
+            .gallery-grid {
+                @apply grid grid-cols-2 md:grid-cols-3 gap-4;
+            }
+
+            .gallery-item {
+                @apply rounded-lg overflow-hidden shadow-sm;
+            }
+
+            .gallery-item img {
+                @apply w-full h-48 object-cover;
+            }
+
+            /* cta Section */
+            .cta-section {
+                @apply bg-orange-800 text-white p-8 rounded-xl text-center;
+            }
+
+            .cta-title {
+                @apply text-2xl font-bold mb-2;
+            }
+
+            .cta-description {
+                @apply mb-6;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Cabeçalho -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Gustavo   </div>
-                <ul class="menu">
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="../directories/about.html">Sobre</a></li>
-                    <li><a href="../directories/projects.html">Projetos</a></li>
-                </ul>
+     <!-- Cabeçalho  -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container-custom">
+            <nav class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-orange-800">Gustavo</div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex gap-6">
+                    <a href="index.html" class="nav-link active">Inicio</a>
+                    <a href="./directories/about.html" class="nav-link">Sobre mim</a>
+                    <a href="../directories/projects.html" class="nav-link">Projetos</a>
+                </div>
+
+                <!-- Menu Button (para celular) -->
+                <button class="md:hidden" onclick="toggleMenu()">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
             </nav>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col gap-4">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="./directories/about.html" class="nav-link">Sobre</a>
+                    <a href="./directories/projects.html" class="nav-link">Projetos</a>
+
+                </div>
+            </div>
         </div>
     </header>
 
