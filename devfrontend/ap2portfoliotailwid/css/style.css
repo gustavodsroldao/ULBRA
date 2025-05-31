@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tipografia */
+.section-title {
+  @apply relative text-2xl text-center font-bold text-gray-800 pb-2 mb-10;
+}
+.section-title::after {
+  content: '';
+  @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-20 h-1 bg-purple-800;
+}
+.section-title.light::after {
+  @apply bg-white;
+}
+
+.highlight {
+  @apply text-yellow-300;
+}
+
+/* Botões */
+.btn {
+  @apply inline-block px-6 py-3 rounded-full font-semibold text-center transition-all duration-300;
+}
+
+.btn-primary {
+  @apply bg-white text-purple-800 hover:bg-yellow-300 hover:text-purple-800;
+}
+
+.btn-outline {
+  @apply bg-transparent border-2 border-white text-white hover:bg-white hover:text-purple-800;
+}
+
+.btn-accent {
+  @apply bg-yellow-300 text-purple-800 hover:bg-yellow-400;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 text-gray-800 hover:bg-gray-300;
+}
+
+/* Hero */
+.hero {
+  @apply bg-gradient-to-r from-purple-700 to-purple-800 text-white py-20;
+}
+.hero-content {
+  @apply flex flex-col items-center gap-8;
+}
+.hero-text {
+  @apply text-4xl font-bold mb-2;
+}
+.hero-subtext {
+  @apply text-xl mb-4;
+}
+.hero-image {
+  @apply w-[250px] h-[250px] rounded-full overflow-hidden border-4 border-white shadow-lg;
+}
+.hero-image img {
+  @apply w-full h-full object-cover;
+}
+
+/* Projetos */
+.project-card {
+  @apply bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-transform hover:-translate-y-1;
+}
+.project-image {
+  @apply h-52 overflow-hidden;
+}
+.project-image img {
+  @apply w-full h-full object-cover transition-transform duration-500 hover:scale-105;
+}
+.project-content {
+  @apply p-6;
+}
+.project-title {
+  @apply text-purple-800 mb-2;
+}
+.project-link {
+  @apply inline-block mt-2 text-purple-800 font-medium hover:text-purple-600;
+}
+
+/* Rodapé */
+.footer {
+  @apply bg-gray-900 text-white py-8;
+}
+.footer-links {
+  @apply flex gap-6 justify-center;
+}
+.footer-links a {
+  @apply hover:text-purple-400 transition-colors;
+}
