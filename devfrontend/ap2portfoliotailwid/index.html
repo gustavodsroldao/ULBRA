@@ -131,6 +131,18 @@
                 @apply mb-6;
             }
 
+            .form-container {
+                @apply flex-1
+            }
+
+            .form-content {
+                @apply space-y-6;
+            }
+
+            .footer-title {
+                @apply flex gap-6;
+            }
+
             .form-label {
                 @apply block mb-2;
             }
@@ -153,51 +165,53 @@
                 @apply text-orange-800;
             }
 
+            .nav-title {
+                @apply flex justify-between items-center py-4;
+            }
+
             /* tags */
             .tag {
                 @apply bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm;
             }
 
-            /* experience card */
-            .experience-card {
-                @apply bg-white p-6 rounded-lg shadow-sm;
+            .footer {
+                @apply bg-gray-800 text-white py-8;
             }
 
-            .experience-header {
-                @apply flex flex-col md:flex-row md:justify-between md:items-center mb-2;
+            /* header */
+
+            .header-title {
+                @apply text-2xl font-bold text-orange-800;
+            }
+  
+            /* desktop menu */
+            .desktop-menu {
+                @apply hidden md:flex gap-6
             }
 
-            .experience-title {
-                @apply text-xl font-bold text-orange-800;
+            /* hero */
+            .hero-session {
+                @apply bg-gradient-to-r from-orange-700 to-orange-800 text-white py-20;
             }
 
-            .experience-date {
-                @apply text-gray-500 text-sm;
+            .hero-content {
+                @apply flex flex-col md:flex-row items-center justify-between gap-8;
             }
 
-            .experience-company {
-                @apply text-gray-600 mb-4;
+            .hero-text {
+                @apply flex-1 text-center md:text-left;
             }
 
-            .experience-list {
-                @apply list-disc list-inside text-gray-600 space-y-2;
+            .btn-hero {
+                @apply flex flex-wrap gap-4 justify-center md:justify-start mt-6;
             }
 
-            /* Table */
-            .table-container {
-                @apply bg-white rounded-lg shadow-sm overflow-hidden;
+            .hero-image {
+                @apply w-64 h-64 rounded-full overflow-hidden border-4 border-white shadow-2xl;
             }
 
-            .table {
-                @apply w-full border-collapse;
-            }
-
-            .table th {
-                @apply p-4 text-left bg-orange-800 text-white;
-            }
-
-            .table td {
-                @apply p-4 border-b border-gray-200 last:border-b-0;
+            .mobile-menu {
+              @apply hidden md:hidden pb-4;
             }
         }
     </style>
@@ -205,13 +219,13 @@
 <body class="font-sans leading-relaxed text-gray-800 bg-gray-50">
 
     <!-- Header -->
-    <header class="bg-white shadow-lg sticky top-0 z-50">
+    <header class="header-content">
         <div class="container-custom">
-            <nav class="flex justify-between items-center py-4">
-                <div class="text-2xl font-bold text-orange-800">Gustavo</div>
+            <nav class="nav-title">
+                <div class="header-title">Gustavo</div>
                 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex gap-6">
+                <div class="desktop-menu">
                     <a href="index.html" class="nav-link active">Inicio</a>
                     <a href="./directories/about.html" class="nav-link">Sobre mim</a>
                     <a href="./directories/projects.html" class="nav-link">Projetos</a>
@@ -224,7 +238,7 @@
             </nav>
 
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden pb-4">
+            <div id="mobile-menu" class="mobile-menu">
                 <div class="flex flex-col gap-4">
                     <a href="index.html" class="nav-link">Inicio</a>
                     <a href="./directories/about.html" class="nav-link">Sobre</a>
@@ -235,26 +249,26 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="bg-gradient-to-r from-orange-700 to-orange-800 text-white py-20">
+    <!-- sessao hero -->
+    <section id="home" class="hero-session">
         <div class="container-custom">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="hero-content">
                 <!-- Hero Text -->
-                <div class="flex-1 text-center md:text-left">
+                <div class="hero-text">
                     <h1 class="text-4xl lg:text-5xl font-bold mb-2 leading-tight">
                         Prazer,<span class="highlight pl-4">Gustavo!</span>
                     </h1>
                     <p class="text-xl mb-4">Desenvolvedor Full Stack apaixonado por criar soluções inovadoras</p>   
                     <p class="mb-6">Transformando ideias em projetos reais</p>
 
-                    <!-- Hero Buttons -->
-                    <div class="flex flex-wrap gap-4 justify-center md:justify-start mt-6">
+                    <!-- botoes hero -->
+                    <div class="btn-hero">
                         <a href="./directories/about.html" class="btn btn-primary">Sobre mim</a>
                         <a href="./directories/projects.html" class="btn btn-outline">Ver projetos</a>
                     </div>
                 </div>
 
-                <div class="w-64 h-64 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+                <div class="hero-image">
                     <img src="images/me.jpg" class="w-full h-full object-cover">
                 </div>
             </div>
@@ -380,9 +394,9 @@
                     </div>
                 </div>
 
-                <!-- Contact Form -->
-                <div class="flex-1">
-                    <form class="space-y-6">
+                <!-- form de contato -->
+                <div class="form-container">
+                    <form class="form-content">
                         <div class="form-group">
                             <label for="name" class="form-label">Nome</label>
                             <input type="text" id="name" class="form-input" placeholder="Seu nome">
@@ -393,7 +407,7 @@
                         </div>
                         <div class="form-group">
                             <label for="message" class="form-label">Mensagem</label>
-                            <textarea id="message" rows="4" class="form-input resize-none" placeholder="Sua mensagem..."></textarea>
+                            <textarea id="message" rows="4" class="form-input" placeholder="Sua mensagem..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-accent">Enviar Mensagem</button>
                     </form>
@@ -402,17 +416,17 @@
         </div>
     </section>
 
-    <footer class="bg-gray-800 text-white py-8">
+    <footer class="footer">
         <div class="container-custom">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                <div class="text-center md:text-left">
+            <div class="footer-content">
+                <div class="footer-copyright">
                     <p>&copy; 2024 Gustavo da Silveira Roldão Todos os direitos reservados.</p>
                 </div>
 
-                <div class="flex gap-6">
-                    <a href="#" class="hover:text-orange-400 transition-colors duration-300">Política de Privacidade</a>
-                    <a href="#" class="hover:text-orange-400 transition-colors duration-300">Termos de Uso</a>
-                    <a href="#" class="hover:text-orange-400 transition-colors duration-300">Contato</a>
+                <div class="footer-title">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Contato</a>
                 </div>
             </div>
         </div>
@@ -425,7 +439,7 @@
             menu.classList.toggle('hidden');
         }
 
-        // Smooth scrolling for anchor links
+        // scroll suave para links internos
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();

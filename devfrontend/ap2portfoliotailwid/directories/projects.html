@@ -52,6 +52,14 @@
                 @apply text-yellow-300;
             }
 
+            .header-title {
+                @apply text-2xl font-bold text-orange-800;
+            }
+
+            .header-content {
+                @apply bg-white shadow-lg sticky top-0 z-50;
+            }
+
             /* buttons */
             .btn {
                 @apply inline-block px-6 py-3 rounded-full font-semibold text-center cursor-pointer transition-all duration-300;
@@ -82,8 +90,16 @@
                 @apply hover:shadow-xl hover:-translate-y-2;
             }
 
+            .project-grid {
+                @apply grid grid-cols-1 md:grid-cols-2 gap-8 mt-10;
+            }
+
            .project-card {
                 @apply bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300;
+            }
+
+            .project-content {
+                @apply mb-12;
             }
 
             .project-image {
@@ -107,7 +123,7 @@
             }
 
             .project-link {
-                @apply inline-flex items-center gap-2 text-orange-800 font-medium hover:text-orange-600 transition-colors duration-300;
+                @apply inline-flex items-center gap-2 text-orange-800 font-medium hover:text-orange-600 transition-colors duration-300 mb-12;
             }
 
             /* Skills */
@@ -247,21 +263,51 @@
             .project-subtitle {
                 @apply text-gray-700 mb-6 leading-relaxed mt-4;
             }
+
+            .footer {
+                @apply bg-gray-800 text-white py-8;
+            }
+
+            .footer-title {
+                @apply flex gap-6;
+            }
+
+            .footer-copyright {
+                @apply text-center md:text-left;
+            }
+
+            .footer-content {
+                @apply flex flex-col md:flex-row items-center justify-between gap-4;
+            }
+
+            .features-list {
+                @apply text-gray-600;
+            }
+
+            /* desktop menu */
+            .desktop-menu {
+                @apply hidden md:flex gap-6
+            }
+
+            /* mobile menu */
+            .mobile-menu {
+                @apply hidden md:hidden pb-4;
+            }
         }
     </style>
 </head>
 
 <body>
     <!-- Cabeçalho  -->
-    <header class="bg-white shadow-lg sticky top-0 z-50">
+    <header class="header-content">
         <div class="container-custom">
             <nav class="flex justify-between items-center py-4">
-                <div class="text-2xl font-bold text-orange-800">Gustavo</div>
+                <div class="header-title">Gustavo</div>
 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex gap-6">
+                <div class="desktop-menu">
                     <a href="/ap2portfoliotailwid/index.html" class="nav-link">Inicio</a>
-                    <a href="./directories/about.html" class="nav-link">Sobre mim</a>
+                    <a href="/ap2portfoliotailwid/directories/about.html" class="nav-link">Sobre mim</a>
                     <a href="../directories/projects.html" class="nav-link active">Projetos</a>
                 </div>
 
@@ -272,11 +318,11 @@
             </nav>
 
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden pb-4">
+            <div id="mobile-menu" class="mobile-menu">
                 <div class="flex flex-col gap-4">
-                    <a href="index.html" class="nav-link">Inicio</a>
-                    <a href="./directories/about.html" class="nav-link">Sobre</a>
-                    <a href="./directories/projects.html" class="nav-link">Projetos</a>
+                    <a href="/ap2portfoliotailwid/index.html" class="nav-link">Inicio</a>
+                    <a href="/ap2portfoliotailwid/directories/about.html" class="nav-link">Sobre</a>
+                    <a href="../directories/projects.html" class="nav-link">Projetos</a>
 
                 </div>
             </div>
@@ -285,10 +331,8 @@
 
     <div class="mb-12">
         <div>
-
             <div class="container-custom">
                 <h1 class="page-title">GRVendas - Sistema de Automação Comercial</h1>
-
                 <!-- Imagem do projeto -->
                 <div class="project-hero-image">
                     <img src="../images/sistema-pdv.jpg" alt="imagem do projeto PDV">
@@ -309,7 +353,7 @@
                         o PDV visa otimizar o processo de vendas e melhorar a experiência do usuário.
                     </p>
 
-                    <ul class="features-list text-gray-600">
+                    <ul class="features-list">
                         <li>Cadastro de produtos e serviços</li>
                         <li>Gerenciamento de estoque</li>
                         <li>Emissão de notas fiscais</li>
@@ -322,12 +366,12 @@
                         Para superar esses obstáculos, utilizei bibliotecas e APIs específicas,
                         além de realizar testes rigorosos para garantir a funcionalidade e a segurança do sistema.
                     </p>
-                    <div class="projects-links mb-12">
+                    <div class="projects-links">
                         <a href="https://github.com/gustavodsroldao" class="btn btn-secondary" target="_blank">Ver código no Github</a>
                     </div>
 
-                    <div class="mb-12">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="project-content">
+                        <div class="project-grid">
                             <div class="project-card">
                                 <div class="project-image">
                                     <img src="../images/rimberio.png" alt="Rimberio"
@@ -343,8 +387,7 @@
 
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="../images/mobile.jpg" alt="Aplicativo Mobile"
-                                        class="w-full h-full object-cover">
+                                    <img src="../images/mobile.jpg" alt="Aplicativo Mobile">
                                 </div>
                                 <div class="project-info">
                                     <h3 class="project-title">Aplicativo Mobile</h3>
@@ -357,7 +400,7 @@
                     </div>
                 </div>
 
-                <!-- CTA -->
+                <!-- cta -->
                 <div class="cta-section mb-20">
                     <h2 class="cta-title">Gostou do meu trabalho?</h2>
                     <p class="cta-description">Estou disponível para novos projetos e oportunidades. Vamos trabalhar
@@ -368,17 +411,18 @@
         </div>
 
         <!-- Rodapé -->
-        <footer class="bg-gray-800 text-white py-8">
+        <footer class="footer">
             <div class="container-custom">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                    <div class="text-center md:text-left">
+                <div class="footer-content">
+                    <div class="footer-copyright">
                         <p>&copy; 2024 Gustavo da Silveira Roldão Todos os direitos reservados.</p>
                     </div>
 
-                    <div class="flex gap-6">
-                        <a href="#" class="hover:text-orange-400 transition-colors duration-300">Política de Privacidade</a>
-                        <a href="#" class="hover:text-orange-400 transition-colors duration-300">Termos de Uso</a>
-                        <a href="#" class="hover:text-orange-400 transition-colors duration-300">Contato</a>
+                        <div class="footer-title">
+                            <a href="#">Política de Privacidade</a>
+                            <a href="#">Termos de Uso</a>
+                            <a href="#">Contato</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -391,7 +435,7 @@
                 menu.classList.toggle('hidden');
             }
 
-            // Smooth scrolling for anchor links
+            // scroll suave para links internos
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -405,7 +449,7 @@
                 });
             });
 
-            // Close mobile menu when clicking on a link
+            // fecha o menu ao clicar em um link no mobile
             document.querySelectorAll('#mobile-menu a').forEach(link => {
                 link.addEventListener('click', () => {
                     document.getElementById('mobile-menu').classList.add('hidden');
