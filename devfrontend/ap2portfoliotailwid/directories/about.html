@@ -3,6 +3,7 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +31,7 @@
 
             /* tipografia */
             .section-title {
-                @apply text-4xl font-bold text-gray-800 mb-2 text-center relative pb-2;
+                @apply text-4xl font-bold text-gray-800 mb-2 text-center relative pb-2 ;
             }
             
             .section-title::after {
@@ -129,24 +130,6 @@
                 @apply font-semibold text-gray-800;
             }
 
-            /* forms */
-            .form-group {
-                @apply mb-6;
-            }
-
-            .form-label {
-                @apply block mb-2;
-            }
-
-            .form-input {
-                @apply w-full p-3 rounded-lg border border-white/20 bg-white/10 text-white placeholder-white/70 focus:outline-none focus:border-yellow-300;
-            }
-
-            /* social Icons */
-            .social-icon {
-                @apply w-10 h-10 rounded-full bg-white text-orange-800 flex items-center justify-center hover:bg-yellow-300 transition-colors duration-300;
-            }
-
             /* navigation */
             .nav-link {
                 @apply text-gray-600 font-medium hover:text-orange-800 transition-colors duration-300;
@@ -159,15 +142,6 @@
             /* tags */
             .tag {
                 @apply bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm;
-            }
-
-            /* progress bar */
-            .progress-bar {
-                @apply h-2.5 bg-gray-200 rounded-full overflow-hidden mb-2;
-            }
-
-            .progress-fill {
-                @apply h-full bg-orange-800 rounded-full;
             }
 
             /* experience card */
@@ -195,7 +169,7 @@
                 @apply list-disc list-inside text-gray-600 space-y-2;
             }
 
-            /* Table */
+            /* tabela */
             .table-container {
                 @apply bg-white rounded-lg shadow-sm overflow-hidden;
             }
@@ -212,47 +186,51 @@
                 @apply p-4 border-b border-gray-200 last:border-b-0;
             }
 
-            /* Gallery */
-            .gallery-grid {
-                @apply grid grid-cols-2 md:grid-cols-3 gap-4;
+            /* coisas do sobremim */
+
+            .profile-info {
+                @apply text-2xl text-gray-600
             }
 
-            .gallery-item {
-                @apply rounded-lg overflow-hidden shadow-sm;
+            .profile-title {
+                @apply text-orange-700 font-bold mb-4 ml-4 md:mt-10;
             }
 
-            .gallery-item img {
-                @apply w-full h-48 object-cover;
+            .profile-about-me {
+                @apply text-gray-600 mb-4 text-[16px] mr-4 ml-4;
             }
 
-            /* cta Section */
-            .cta-section {
-                @apply bg-orange-800 text-white p-8 rounded-xl text-center;
+            .skills-tags {
+                @apply flex flex-wrap gap-2 mt-4 text-orange-600 text-sm mb-4 ml-4;
             }
 
-            .cta-title {
-                @apply text-2xl font-bold mb-2;
+            .experience-card {
+                @apply bg-white p-6 rounded-lg shadow-sm;
             }
 
-            .cta-description {
-                @apply mb-6;
+            .experience-title {
+                @apply text-xl font-bold text-orange-800 mb-2;
             }
+
+            .experience-subtitle {
+                @apply text-sm font-bold text-orange-800 mb-4;
+            }
+
         }
     </style>
 </head>
 
 <body>
-    
     <!-- Cabeçalho  -->
     <header class="bg-white shadow-lg sticky top-0 z-50">
         <div class="container-custom">
             <nav class="flex justify-between items-center py-4">
                 <div class="text-2xl font-bold text-orange-800">Gustavo</div>
-                
+
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex gap-6">
-                    <a href="index.html" class="nav-link active">Inicio</a>
-                    <a href="./directories/about.html" class="nav-link">Sobre mim</a>
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="./directories/about.html" class="nav-link active">Sobre mim</a>
                     <a href="../directories/projects.html" class="nav-link">Projetos</a>
                 </div>
 
@@ -262,7 +240,6 @@
                 </button>
             </nav>
 
-            <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden pb-4">
                 <div class="flex flex-col gap-4">
                     <a href="index.html" class="nav-link">Inicio</a>
@@ -275,98 +252,98 @@
     </header>
 
     <!-- Conteúdo principal  -->
-    <main class="about-page">
-        <div class="container">
+    <div class="py-12 min-h-screen">
+        <div class="container-custom">
             <h1 class="page-title">Sobre mim</h1>
-
             <!-- Perfil -->
-            <div class="profile-card">
-                <div class="profile-image">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-16">
+                <div class="h-80 md:h-auto rounded-full">
                     <img src="../images/meabout.jpg" alt="imagem de perfil/Gustavo">
                 </div>
-                <div class="profile-info">
-                    <h2>Olá, eu sou o Gustavo!</h2>
-                    <p>
-                        Sou um desenvolvedor full stack apaixonado pela programação e pelo aprendizado constante.
-                        Tenho 1 ano de experiência em desenvolvimento de software, onde trabalhei em projetos
-                        desafiadores que me permitiram aprimorar minhas habilidades técnicas e de resolução de
-                        problemas.
-                        No último ano tenho trabalhado com diversas tecnologias e frameworks para entregar soluções
-                        eficientes e escaláveis.
-                    </p>
-                    <p>
-                        Minha jornada na programação começou realmente em 2021, quando desenvolvi meus primeiros
-                        projetos.
-                        Desde então, venho aprimorando minhas habilidades e expandindo meu conhecimento em diferentes
-                        áreas do desenvolvimento web.
-                    </p>
-                    <div class="skills-tags">
-                        <span class="skill-tag">Flutter</span>
-                        <span class="skill-tag">C#</span>
-                        <span class="skill-tag">Next.js</span>
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">JavaScript</span>
+                <div class="profile-info ml-4 md:mt-10 ">
+                    <h2 class="profile-title">Olá, eu sou o Gustavo!</h2>
+
+                    <div class="profile-about-me">
+                        <p>
+                            Sou um desenvolvedor full stack apaixonado pela programação e pelo aprendizado constante.
+                            Tenho 1 ano de experiência em desenvolvimento de software, onde trabalhei em projetos
+                            desafiadores que me permitiram aprimorar minhas habilidades técnicas e de resolução de
+                            problemas.
+                            No último ano tenho trabalhado com diversas tecnologias e frameworks para entregar soluções
+                            eficientes e escaláveis.
+                        </p>
+                        <p>
+                            Minha jornada na programação começou realmente em 2021, quando desenvolvi meus primeiros
+                            projetos.
+                            Desde então, venho aprimorando minhas habilidades e expandindo meu conhecimento em diferentes
+                            áreas do desenvolvimento web.
+                        </p>
+                    </div>
+                    <div class="mb-14 ml-4">
+                        <span class="tag">Flutter</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">Next.js</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
                     </div>
                 </div>
 
                 <!-- Experiência profissional -->
                 <section class="experience-section">
                     <h2 class="section-title">Experiência Profissional</h2>
-
                     <div class="experience-container">
                         <div class="experience-card">
                             <div class="experience-header">
-                                <h3>Desenvolvedor Full Stack</h3>
+                                <h3 class="experience-title">Desenvolvedor Full Stack</h3>
                                 <p class="experience-date">Outubro 2024 - Presente</p>
                             </div>
-                            <h4>Cervantes Tecnologia</h4>
+                            <h4 class="experience-subtitle">Cervantes Tecnologia</h4>
                             <ul class="experience-list">
                                 <li>Desenvolvimento de aplicações desktop e mobile utilizando Flutter.</li>
                                 <li>Colaboração em equipe ágil para entrega de projetos dentro do prazo.</li>
-                                <li>Implementação de soluções escaláveis e eficientes.</li> 
+                                <li>Implementação de soluções escaláveis e eficientes.</li>
                             </ul>
                         </div>
                         <div class="experience-card">
                             <div class="experience-header">
-                                <h3>Entregas</h3>
+                                <h3 class="experience-title">Entregas</h3>
                                 <p class="experience-date">Dezembro 2022 - Agosto 2024</p>
                             </div>
-                            <h4>Fruteira PegPag</h4>
+                            <h4 class="experience-subtitle">Fruteira PegPag</h4>
                             <ul class="experience-list">
                                 <li>Colaboração em equipe ágil para entregas dentro do prazo.</li>
-                                <li>Organizações de rotas de entregas eficientes.</li> 
+                                <li>Organizações de rotas de entregas eficientes.</li>
                             </ul>
                         </div>
                     </div>
                 </section>
-
-                <!-- Formação acadêmica -->
-                <section class="education-section">
-                    <h2 class="section-title">Formação Acadêmica</h2>
-
-                    <div class="table-container">
-                        <table class="education-table">
-                            <thead>
-                                <tr>
-                                    <th>Curso</th>
-                                    <th>Instituição</th>
-                                    <th>Ano de Conclusão</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Técnologo em Análise e Desenvolvimento de Sistemas</td>
-                                    <td>Universidade Luterâna do Brasil</td>
-                                    <td>2025 - 2027</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
             </div>
+
+            <!-- Formação acadêmica -->
+            <section>
+                <h2 class="section-title">Formação Acadêmica</h2>
+                <div class="mt-10 table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Curso</th>
+                                <th>Instituição</th>
+                                <th>Ano</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Técnologo em Análise e Desenvolvimento de Sistemas</td>
+                                <td>Universidade Luterâna do Brasil</td>
+                                <td>2025 - 2027</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
         </div>
-    </main>
+    </div>
 
     <!-- Rodapé  -->
     <footer class="bg-gray-800 text-white py-8">
@@ -385,7 +362,7 @@
         </div>
     </footer>
 
-    <script>    
+    <script>
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>

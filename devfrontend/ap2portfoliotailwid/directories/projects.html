@@ -82,8 +82,8 @@
                 @apply hover:shadow-xl hover:-translate-y-2;
             }
 
-            .project-card {
-                @apply card card-hover overflow-hidden;
+           .project-card {
+                @apply bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300;
             }
 
             .project-image {
@@ -235,22 +235,34 @@
             .cta-description {
                 @apply mb-6;
             }
+
+            .project-hero-image {
+                @apply rounded-xl overflow-hidden shadow-lg mb-8;
+            }
+
+            .project-details {
+                @apply bg-white p-8 rounded-xl shadow-sm mb-12;
+            }
+
+            .project-subtitle {
+                @apply text-gray-700 mb-6 leading-relaxed mt-4;
+            }
         }
     </style>
 </head>
 
 <body>
-     <!-- Cabeçalho  -->
+    <!-- Cabeçalho  -->
     <header class="bg-white shadow-lg sticky top-0 z-50">
         <div class="container-custom">
             <nav class="flex justify-between items-center py-4">
                 <div class="text-2xl font-bold text-orange-800">Gustavo</div>
-                
+
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex gap-6">
-                    <a href="index.html" class="nav-link active">Inicio</a>
+                    <a href="index.html" class="nav-link">Inicio</a>
                     <a href="./directories/about.html" class="nav-link">Sobre mim</a>
-                    <a href="../directories/projects.html" class="nav-link">Projetos</a>
+                    <a href="../directories/projects.html" class="nav-link active">Projetos</a>
                 </div>
 
                 <!-- Menu Button (para celular) -->
@@ -271,102 +283,137 @@
         </div>
     </header>
 
-    <main class="project-page">
-        <div class="container">
-            <h1 class="page-title">GRVendas - Sistema de Automação Comercial</h1>
+    <div class="mb-12">
+        <div>
 
-            <!-- Imagem do projeto -->
-            <div class="project-hero">
-                <img src="../images/sistema-pdv.jpg" alt="imagem do projeto PDV">
-            </div>
+            <div class="container-custom">
+                <h1 class="page-title">GRVendas - Sistema de Automação Comercial</h1>
 
-            <!-- Detalhes do projeto -->
-            <div class="project-details">
-                <div class="projects-tag">
-                    <span class="project-tag">C#</span>
-                    <span class="project-tag">Windows Forms</span>
+                <!-- Imagem do projeto -->
+                <div class="project-hero-image">
+                    <img src="../images/sistema-pdv.jpg" alt="imagem do projeto PDV">
                 </div>
 
-                <h2>Sobre o projeto</h2>
-                <p>
-                    O projeto GRVendas (PDV), é um sistema de automação comercial desenvolvido em C# utilizando Windows Forms.
-                    O objetivo principal do projeto é fornecer uma solução eficiente para o gerenciamento de vendas,
-                    estoque e relatórios financeiros em estabelecimentos comerciais. Com uma interface amigável e
-                    funcionalidades robustas,
-                    o PDV visa otimizar o processo de vendas e melhorar a experiência do usuário.
-                </p>
+                <!-- Detalhes do projeto -->
+                <div class="project-details">
+                    <div class="projects-tag">
+                        <span class="tag">C#</span>
+                        <span class="tag">Windows Forms</span>
+                    </div>
+                    <p class="project-subtitle">
+                        O projeto GRVendas (PDV), é um sistema de automação comercial desenvolvido em C# utilizando
+                        Windows Forms.
+                        O objetivo principal do projeto é fornecer uma solução eficiente para o gerenciamento de vendas,
+                        estoque e relatórios financeiros em estabelecimentos comerciais. Com uma interface amigável e
+                        funcionalidades robustas,
+                        o PDV visa otimizar o processo de vendas e melhorar a experiência do usuário.
+                    </p>
 
-                <h2>Funcionalidades</h2>
-                <ul class="features-list">
-                    <li>Cadastro de produtos e serviços</li>
-                    <li>Gerenciamento de estoque</li>
-                    <li>Emissão de notas fiscais</li>
-                    <li>Relatórios de vendas e desempenho</li>
-                    <li>Integração com dispositivos de pagamento</li>
-                </ul>
+                    <ul class="features-list">
+                        <li>Cadastro de produtos e serviços</li>
+                        <li>Gerenciamento de estoque</li>
+                        <li>Emissão de notas fiscais</li>
+                        <li>Relatórios de vendas e desempenho</li>
+                        <li>Integração com dispositivos de pagamento</li>
+                    </ul>
 
-                <h2>Desafios e solções</h2>
-                <p>
-                    Durante o desenvolvimento do projeto, enfrentei diversos desafios,
-                    como a integração com dispositivos de pagamento e a criação de relatórios personalizados.
-                    Para superar esses obstáculos, utilizei bibliotecas e APIs específicas,
-                    além de realizar testes rigorosos para garantir a funcionalidade e a segurança do sistema.
-                </p>
-                <div class="projects-links">
-                    <a href="https://github.com/gustavodsroldao" class="btn btn-secondary" target="_blank">Ver código no Github</a>
-                </div>
+                    <h2>Desafios e solções</h2>
+                    <p class="project-subtitle">
+                        Durante o desenvolvimento do projeto, enfrentei diversos desafios,
+                        como a integração com dispositivos de pagamento e a criação de relatórios personalizados.
+                        Para superar esses obstáculos, utilizei bibliotecas e APIs específicas,
+                        além de realizar testes rigorosos para garantir a funcionalidade e a segurança do sistema.
+                    </p>
+                    <div class="projects-links mb-12">
+                        <a href="https://github.com/gustavodsroldao" class="btn btn-secondary" target="_blank">Ver código no Github</a>
+                    </div>
 
-                <section class="other-projects">
-                    <h2 class="section-title">Outros projetos</h2>
-                    <div class="other-projects-grid">
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="../images/rimberio.png" alt="Aplicativo Mobile">
+                    <div class="mb-12">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="/placeholder.svg?height=200&width=400" alt="Rimberio"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <div class="project-info">
+                                    <h3 class="project-title">Rimberio</h3>
+                                    <p class="project-description">Desenvolvimento de um Website completo para uma
+                                        hamburgueria</p>
+                                    <a href="../images/rimberio.png" class="project-link">Ver detalhes →</a>
+                                </div>
                             </div>
-                            <div class="project-info">
-                                <h3>Rimberio</h3>
-                                <p>Desenvolvimento de um Website completo para uma hamburgueria.</p>
-                                <a href="#" class="project-link">Ver detalhes →</a>
-                            </div>
-                        </div>
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="../images/mobile.jpg" alt="Aplicativo Mobile">
-                            </div>
-                            <div class="project-info">
-                                <h3>Aplicativo Mobile</h3>
-                                <p>Desenvolvimento de app mobile para iOS e Android usando React Native.</p>
-                                <a href="#" class="project-link">Ver detalhes →</a>
+
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="../images/mobile.jpg" alt="Aplicativo Mobile"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <div class="project-info">
+                                    <h3 class="project-title">Aplicativo Mobile</h3>
+                                    <p class="project-description">Desenvolvimento de app mobile para iOS e Android
+                                        usando React Native</p>
+                                    <a href="#" class="project-link">Ver detalhes →</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
 
                 <!-- CTA -->
-                <div class="cta-section">
-                    <h2>Gostou do meu trabalho?</h2>
-                    <p>Estou disponível para novos projetos e oportunidades. Vamos trabalhar juntos!</p>
-                    <a href="instagram.com/gustavodasilveirasr" class="btn btn-accent-project">Entre em Contato</a>
-                </div>
-            </div>
-    </main>
-    <!-- Rodapé -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; <span id="year"></span> Seu Nome. Todos os direitos reservados.</p>
-                <div class="footer-links">
-                    <a href="https://www.linkedin.com/in/gustavodasilveiraroldao/">LinkedIn</a>
-                    <a href="https://github.com/gustavodsroldao">GitHub</a>
-                    <a href="https://instagram.com/gustavodasilveirasr">Instagram</a>
+                <div class="cta-section mb-20">
+                    <h2 class="cta-title">Gostou do meu trabalho?</h2>
+                    <p class="cta-description">Estou disponível para novos projetos e oportunidades. Vamos trabalhar
+                        juntos!</p>
+                    <a href="https://instagram.com/gustavodasilveirasr" class="btn btn-accent-project" target="_blank">Entre em Contato</a>
                 </div>
             </div>
         </div>
-    </footer>
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+        <!-- Rodapé -->
+        <footer class="bg-gray-800 text-white py-8">
+            <div class="container-custom">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div class="text-center md:text-left">
+                        <p>&copy; 2024 Gustavo da Silveira Roldão Todos os direitos reservados.</p>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <a href="#" class="hover:text-orange-400 transition-colors duration-300">Política de Privacidade</a>
+                        <a href="#" class="hover:text-orange-400 transition-colors duration-300">Termos de Uso</a>
+                        <a href="#" class="hover:text-orange-400 transition-colors duration-300">Contato</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JavaScript -->
+        <script>
+            function toggleMenu() {
+                const menu = document.getElementById('mobile-menu');
+                menu.classList.toggle('hidden');
+            }
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                });
+            });
+        </script>
 </body>
 
 </html>
