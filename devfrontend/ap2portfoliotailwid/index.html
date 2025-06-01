@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -147,6 +148,10 @@
                 @apply block mb-2;
             }
 
+            .form-flex {
+                @apply inline-flex items-center;
+            }
+
             .form-input {
                 @apply w-full p-3 rounded-lg border border-white/20 bg-white/10 text-white placeholder-white/70 focus:outline-none focus:border-yellow-300;
             }
@@ -210,20 +215,74 @@
                 @apply w-64 h-64 rounded-full overflow-hidden border-4 border-white shadow-2xl;
             }
 
+            /* menu do cel */
             .mobile-menu {
               @apply hidden md:hidden pb-4;
+            }
+
+            .mobile-content {
+                @apply flex flex-col gap-4;
+            }
+
+            /* layers do projeto */
+            .project-content {
+              @apply py-20 bg-gray-50;
+            }
+
+            .project-grid {
+              @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10;
+            }
+
+            .hero-text h1 {
+                @apply text-4xl lg:text-5xl font-bold mb-2 leading-tight;
+            }
+
+            /* skills */
+            .section-skills {
+                @apply py-20 bg-white;
+            }
+
+            .skills-content {
+                @apply grid grid-cols-2 md:grid-cols-4 gap-8 mt-10;
+            }
+
+            /* cta */
+
+            .cta-custom {
+                @apply py-20 bg-orange-800 text-white;
+            }
+
+            .cta-title {
+                @apply section-title light;
+            }
+
+            .cta-content {
+                @apply flex flex-col md:flex-row gap-8 mt-10;
+            }
+
+            .cta-content h3 {
+                @apply text-2xl font-bold mb-6;
+            }
+
+            .cta-ul {
+                @apply space-y-4 mb-6;
+            }
+
+            .cta-ul-content {
+                @apply flex items-center gap-3;
             }
         }
     </style>
 </head>
-<body class="font-sans leading-relaxed text-gray-800 bg-gray-50">
+
+<body>
 
     <!-- Header -->
     <header class="header-content">
         <div class="container-custom">
             <nav class="nav-title">
                 <div class="header-title">Gustavo</div>
-                
+
                 <!-- Desktop Menu -->
                 <div class="desktop-menu">
                     <a href="index.html" class="nav-link active">Inicio</a>
@@ -239,11 +298,10 @@
 
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="mobile-menu">
-                <div class="flex flex-col gap-4">
+                <div class="mobile-content">
                     <a href="index.html" class="nav-link">Inicio</a>
                     <a href="./directories/about.html" class="nav-link">Sobre</a>
                     <a href="./directories/projects.html" class="nav-link">Projetos</a>
-
                 </div>
             </div>
         </div>
@@ -255,10 +313,8 @@
             <div class="hero-content">
                 <!-- Hero Text -->
                 <div class="hero-text">
-                    <h1 class="text-4xl lg:text-5xl font-bold mb-2 leading-tight">
-                        Prazer,<span class="highlight pl-4">Gustavo!</span>
-                    </h1>
-                    <p class="text-xl mb-4">Desenvolvedor Full Stack apaixonado por criar soluções inovadoras</p>   
+                    <h1>Prazer,<span class="highlight pl-4">Gustavo!</span></h1>
+                    <p class="text-xl mb-4">Desenvolvedor Full Stack apaixonado por criar soluções inovadoras</p>
                     <p class="mb-6">Transformando ideias em projetos reais</p>
 
                     <!-- botoes hero -->
@@ -275,21 +331,21 @@
         </div>
     </section>
 
-    <section id="projects" class="py-20 bg-gray-50">
+    <section id="projects" class="project-content">
         <div class="container-custom">
             <!-- titulo -->
             <h2 class="section-title">Meus Projetos</h2>
-
             <!-- Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+            <div class="project-grid">
                 <!-- projeto 1 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/sistema-pdv.jpg"Projeto pdv">
+                        <img src="images/sistema-pdv.jpg" Projeto pdv">
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Sistema PDV</h3>
-                        <p class="project-description">Desenvolvimento de uma loja virtual completa com carrinho de compras e sistema de pagamento.</p>
+                        <p class="project-description">Desenvolvimento de uma loja virtual completa com carrinho de
+                            compras e sistema de pagamento.</p>
                         <a href="./directories/projects.html" class="project-link">
                             Ver Projeto <i class="fas fa-external-link-alt text-sm"></i>
                         </a>
@@ -299,11 +355,12 @@
                 <!-- projeto 2 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/rimberio.png"rimberio">
+                        <img src="images/rimberio.png" rimberio">
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Rimberio</h3>
-                        <p class="project-description">Desenvolvimento de uma loja virtual completa com carrinho de compras e sistema de pagamento.</p>
+                        <p class="project-description">Desenvolvimento de uma loja virtual completa com carrinho de
+                            compras e sistema de pagamento.</p>
                         <a href="./directories/projects.html" class="project-link">
                             Ver Projeto <i class="fas fa-external-link-alt text-sm"></i>
                         </a>
@@ -327,11 +384,11 @@
         </div>
     </section>
 
-    <section id="skills" class="py-20 bg-white">
+    <section id="skills" class="section-skills">
         <div class="container-custom">
             <h2 class="section-title">Minhas Habilidades</h2>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-10">
+
+            <div class="skills-content">
                 <div class="skill-item">
                     <div class="skill-circle">
                         <span>85%</span>
@@ -360,25 +417,26 @@
         </div>
     </section>
 
-    <section id="contact" class="py-20 bg-orange-800 text-white">
+    <section id="contact" class="cta-custom">
         <div class="container-custom">
-            <h2 class="section-title light">Entre em Contato</h2>
+            <h2 class="cta-title">Entre em Contato</h2>
 
-            <div class="flex flex-col md:flex-row gap-8 mt-10">
+            <div class="cta-content">
                 <div class="flex-1">
-                    <h3 class="text-2xl font-bold mb-6">Vamos conversar!</h3>
-                    <p class="mb-6">Estou sempre aberto a novas oportunidades e projetos interessantes. Entre em contato comigo através dos canais abaixo.</p>
+                    <h3>Vamos conversar!</h3>
+                    <p class="mb-6">Estou sempre aberto a novas oportunidades e projetos interessantes. Entre em contato
+                        comigo através dos canais abaixo.</p>
 
-                    <ul class="space-y-4 mb-6">
-                        <li class="flex items-center gap-3">
+                    <ul class="cta-ul">
+                        <li class="cta-ul-content">
                             <i class="fas fa-envelope"></i>
                             <span>gustavodsroldao@gmail.com</span>
                         </li>
-                        <li class="flex items-center gap-3">
+                        <li class="cta-ul-content">
                             <i class="fas fa-phone"></i>
                             <span>+55 (51) 980280868</span>
                         </li>
-                        <li class="flex items-center gap-3">
+                        <li class="cta-ul-content">
                             <i class="fas fa-map-marker-alt"></i>
                             <span>Torres, RS - Brasil</span>
                         </li>
@@ -406,6 +464,30 @@
                             <input type="email" id="email" class="form-input" placeholder="seu@email.com">
                         </div>
                         <div class="form-group">
+                            <label for="motivo" class="form-label">Motivo do Contato</label>
+                            <select id="motivo" class="form-input w-full p-2 rounded">
+                                <option value="select" class="text-black">Selecione...</option>
+                                <option value="projeto" class="text-black">Proposta de Projeto</option>
+                                <option value="freelance" class="text-black">Freelance</option>
+                                <option value="duvida" class="text-black">Dúvida</option>
+                                <option value="outro" class="text-black">Outro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-flex">
+                                <input type="checkbox">
+                                <span class="ml-2">Desejo receber atualizações por email</span>
+                            </label>
+                        </div>
+                        <label class="form-flex">
+                            <input type="radio" name="contato" value="whatsapp">
+                            <span class="ml-2">WhatsApp</span>
+                        </label>
+                        <label class="form-flex">
+                            <input type="radio" name="contato" value="email">
+                            <span class="ml-2">Email</span>
+                        </label>
+                        <div class="form-group">
                             <label for="message" class="form-label">Mensagem</label>
                             <textarea id="message" rows="4" class="form-input" placeholder="Sua mensagem..."></textarea>
                         </div>
@@ -422,7 +504,6 @@
                 <div class="footer-copyright">
                     <p>&copy; 2024 Gustavo da Silveira Roldão Todos os direitos reservados.</p>
                 </div>
-
                 <div class="footer-title">
                     <a href="#">Política de Privacidade</a>
                     <a href="#">Termos de Uso</a>
@@ -461,4 +542,5 @@
         });
     </script>
 </body>
+
 </html>

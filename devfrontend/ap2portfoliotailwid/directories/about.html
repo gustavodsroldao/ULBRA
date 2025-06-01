@@ -219,6 +219,14 @@
                 @apply flex flex-col md:flex-row items-center justify-between gap-4;
             }
 
+            .desktop-menu {
+                @apply hidden md:flex gap-6;
+            }
+
+            .profile-content {
+                @apply bg-white rounded-xl shadow-md overflow-hidden mb-16;
+            }
+
         }
     </style>
 </head>
@@ -231,7 +239,7 @@
                 <div class="text-2xl font-bold text-orange-800">Gustavo</div>
 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex gap-6">
+                <div class="desktop-menu">
                     <a href="../index.html" class="nav-link">Inicio</a>
                     <a href="./directories/about.html" class="nav-link active">Sobre mim</a>
                     <a href="../directories/projects.html" class="nav-link">Projetos</a>
@@ -248,7 +256,6 @@
                     <a href="../index.html" class="nav-link">Inicio</a>
                     <a href="./directories/about.html" class="nav-link">Sobre</a>
                     <a href="../directories/projects.html" class="nav-link">Projetos</a>
-
                 </div>
             </div>
         </div>
@@ -259,9 +266,9 @@
         <div class="container-custom">
             <h1 class="page-title">Sobre mim</h1>
             <!-- Perfil -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-16">
+            <div class="profile-content">
                 <div class="h-80 md:h-auto rounded-full">
-                    <img src="../images/meabout.jpg" alt="imagem de perfil/Gustavo">
+                    <img src="../images/meabout.jpg" alt="imagem de perfil">
                 </div>
                 <div class="profile-info ml-4 md:mt-10 ">
                     <h2 class="profile-title">Olá, eu sou o Gustavo!</h2>
@@ -393,5 +400,4 @@
             });
         </script>
 </body>
-
 </html>
