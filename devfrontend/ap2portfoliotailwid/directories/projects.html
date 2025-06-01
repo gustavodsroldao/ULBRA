@@ -293,15 +293,18 @@
             .mobile-menu {
                 @apply hidden md:hidden pb-4;
             }
+
+            .nav-content {
+                @apply flex justify-between items-center py-4;
+            }
         }
     </style>
 </head>
-
 <body>
     <!-- Cabeçalho  -->
     <header class="header-content">
         <div class="container-custom">
-            <nav class="flex justify-between items-center py-4">
+            <nav class="nav-content">
                 <div class="header-title">Gustavo</div>
 
                 <!-- Desktop Menu -->
@@ -328,7 +331,7 @@
         </div>
     </header>
 
-    <div class="mb-12">
+    <div>
         <div>
             <div class="container-custom">
                 <h1 class="page-title">GRVendas - Sistema de Automação Comercial</h1>
