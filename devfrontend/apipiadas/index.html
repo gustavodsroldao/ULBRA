@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body>
+    <h1>Piadas randômicas do sor paulo</h1>
+    <p>Pergunta: <span id="setup">Clique no botão para ver a piada</span></p>
+    <p>R: <span id="punchline"></span></p>
+    <button onclick="carregarPiada()">Carregar a piada</button>
+
+    <script>
+        function carregarPiada() {
+            fetch('https://official-joke-api.appspot.com/random_joke')
+            .then(response => {
+                if (!reponse.ok) {
+                    throw new Error('Erro ao buscar piada')
+                }
+                return response.json();
+            })
+            .then(data =>{
+                document.getElementById('lang').textContent = data.lang;
+                document.getElementById('setup').textContent = data.setup;
+                document.getElementById('punchline').textContent = data.punchline;
+            })
+            .catch(error => {
+                document.getElementById('setup').textContent = 'Erro ao carregar a piada';
+                document.getElementById('punchline').textContent = error.message;
+            })
+        }
+    </script>
+</body>
+</html>
