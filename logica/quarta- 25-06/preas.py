@@ -55,17 +55,22 @@ def cadastrar_nova_missao(missoes):
         return missoes
     
     destino_missao = input("Digite o destino da missão: ")
+    ano_lancamento = input("Digite o ano de lançamento da missão: ")
+    if not ano_lancamento.isdigit():
+        print("Ano inválido! Por favor, insira um ano válido.")
+        return missoes
     status_inicial_missao = input("Digite o status inicial da missão: ")
 
     missao_tripulada = input("Esta missão é tripulada? (s/n): ").lower()
 
     # Neste caso, faz uma comparação de string, e retorna um booleano
-    missaoIsTripulada = missao_tripulada == 's'
+    missao_is_tripulada = missao_tripulada == 's'
 
     missoes[nome_missao] = {
         'destino_missao': destino_missao,
         'status_inicial_missao': status_inicial_missao,
-        'missaoIsTripulada': missaoIsTripulada
+        'missao_is_tripulada': missao_is_tripulada,
+        'ano_lancamento': ano_lancamento
     }
 
     print(f"Missão, cujo nome é {nome_missao}, foi cadastrada com sucesso!")
@@ -137,6 +142,25 @@ def listar_todas_missoes(missoes):
 
     return missoes
 
+def listar_todas_missoes_por_status(missoes, status):
+    if not missoes:
+        print("Não há missões cadastradas!")
+        return
+    
+    missoes_filtradas = {nome: dados for nome, dados in missoes.items() if dados['status_inicial_missao'].lower() == status.lower()}
+    print(f"\nListando missões com status: {status}")
+    print("="*30 + "\n")
+    if not missoes_filtradas:
+        print(f"Nenhuma missão encontrada com o status: {status}")
+    else:
+        for nome_missao, dados_missao in missoes_filtradas.items():
+            status_missao = "Tripulada" if dados_missao['missaoIsTripulada'] else "Não Tripulada"
+            print(f"Nome da missão: {nome_missao}")
+            print(f"Destino da missão: {dados_missao['destino_missao']}")
+            print(f"Status da missão: {dados_missao['status_inicial_missao']}")
+            print(f"Tripulada: {status_missao}")
+            print("-"*30)
+
 
 def remover_missao(missoes):
     nome_missao = input("Digite o nome da missão: ")
@@ -154,6 +178,16 @@ def remover_missao(missoes):
             print("Remoção cancelada!")
     else:
         print("Erro: Missão não encontrada!")
+
+def concluir_missao(missoes):
+    print("OBS:  Use a palavra 'concluida' para marcar a missão como concluída!")
+    nome_missao = input("Digite o nome da missão :")
+    if nome_missao in missoes:
+        missoes[nome_missao]['status_inicial_missao'] = 'concluida'
+        print(f"Missão {nome_missao} marcada como concluída!")
+    else:
+        print("Erro: Missão não encontrada!")
+
 
 def verificar_existencia_missao(missoes):
     nome_missao = input("Digite o nome da missão: ")
@@ -212,3 +246,98 @@ def sair_do_crm_austronautico():
     print("Obrigado por usar o CRM AUSTRONAUTICO!")
     print("Até a próxima!")
     exit()
+
+def relatorio(missoes):
+    if not missoes:
+        print("Não há missões cadastradas para gerar relatório!")
+        return
+    
+    total_missoes = len(missoes)
+    if total_missoes == 0:
+        print("Não há missões cadastradas para gerar relatório!")
+        return
+    
+    missoes_concluidas = sum(1 for dados_missao in missoes.values() if dados_missao['status_inicial_missao'].lower() == 'concluida')
+    print("\n" + "="*30)
+    print("Relatório de Missões Espaciais")
+    print (f"Total de missões concluídas: {missoes_concluidas} de {total_missoes}")
+    print(f"Percentual de missões concluídas: {missoes_concluidas / total_missoes * 100:.2f}%")
+    print("\n" + "="*30)
+
+def listar_missoes_por_ano(missoes):
+    if not missoes:
+        print("Não há missões cadastradas!")
+        return
+    
+    ano = input("Digite o ano para filtrar as missões: ")
+
+    if not ano.isdigit():
+        print("Ano inválido! Por favor, insira um ano válido.")
+        return
+    
+    missoes_filtradas = {
+        nome: dados for nome, dados in missoes.items() if dados['ano_lancamento'] == ano
+    }
+
+    if not missoes_filtradas:
+        print(f"Nenhuma missão encontrada para o ano {ano}.")
+        return
+    
+    print(f"\nListando missões do ano {ano}:")
+    print(f"Missão(s) encontradas: {len(missoes_filtradas)}")
+    print("="*30 + "\n")
+
+def menu():
+    while True: 
+        print("CRM AUSTRONAUTICO - Missões Espaciais")
+        print("="*30)
+        print("1. Cadastrar Nova Missão")
+        print("2. Atualizar Status da Missão")
+        print("3. Atualizar Destino da Missão")
+        print("4. Marcar Missão como Tripulada/Não Tripulada")
+        print("5. Listar Todas as Missões")
+        print("6. Listar Missões por Status")
+        print("7. Remover Missão")
+        print("8. Concluir missão")
+        print("9. Verificar Existência de Missão")
+        print("10. Contar Missões por Tipo (Tripulada ou Não)")
+        print("11. Listar missões por ano")
+        print("12. Limpar Todas as Missões")
+        print("13. Gerar Relatório de Missões Concluídas")
+        print("14. Sair do Programa")
+        
+        opcao = input("Escolha uma opção: ")
+
+        if opcao == '1':
+            cadastrar_nova_missao(missoes)
+        elif opcao == '2':
+            atualizar_status_missao(missoes)
+        elif opcao == '3':
+            atualizar_destino_missao(missoes)
+        elif opcao == '4':
+            atualizar_tripulacao_missao()
+        elif opcao == '5':
+            listar_todas_missoes(missoes)
+        elif opcao == '6':
+            status = input("Digite o status para filtrar as missões: ")
+            listar_todas_missoes_por_status(missoes, status)
+        elif opcao == '7':
+            remover_missao(missoes)
+        elif opcao == '8':
+            concluir_missao(missoes)
+        elif opcao == '9':
+            verificar_existencia_missao(missoes)
+        elif opcao == '10':
+            classificar_tipo_missao(missoes)
+        elif opcao == '11':
+            listar_missoes_por_ano(missoes)
+        elif opcao == '12':
+            excluir_todas_missoes(missoes)
+        elif opcao == '13':
+            relatorio(missoes)
+        elif opcao == '14':
+            sair_do_crm_austronautico()
+        else:
+            print("Opção inválida! Tente novamente.")
+
+menu()
