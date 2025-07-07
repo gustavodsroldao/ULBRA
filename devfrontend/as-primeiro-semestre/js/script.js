@@ -8,11 +8,6 @@ const listaVazia = document.getElementById('listaVazia')
 const toast = document.getElementById('toat')
 const toastMessage = document.getElementById('toastMessage')
 
-// Campos do form
-const exercicioNome = document.getElementById('exercicioNome')
-const numeroSerie = document.getElementById('numeroSerie')
-const repeticoesSerie = document.getElementById('repeticoesSerie')
-
 // Erros
 const nomeError = document.getElementById('nomeError')
 const serieError = document.getElementById('serieError')
@@ -79,18 +74,59 @@ function demo() {
 
 function vincularEventos() {
     // Vinculando form
-    exercicioForm.addEventListener("submit", handleSubmit)
-
-    // Validando em real time
-    exercicioNome.addEventListener("input", () => validateForm("nome"))
-    numeroSerie.addEventListener("input", () => validateForm("serie"))
-    repeticoesSerie.addEventListener("input", () => validateForm("repeticoes"))
+    exercicioForm.addEventListener("submit", registrarExercicio)
 
     // Filtros
     document.getElementById("filtrarTodos").addEventListener("click", () => setFilter("all"))   
     document.getElementById("filtrarPendetes").addEventListener("click", () => setFilter("pendentes"))   
     document.getElementById("filtrarConcluidos").addEventListener("click", () => setFilter("concluidos"))   
-    
+
+}
+
+function registrarExercicio(e) {
+    e.preventDefault()
+
+    // Campos do form
+    const exercicioNome = document.getElementById("exercicioNome").value.trim()
+    const numeroSerie = Number.parseInt(document.getElementById('numeroSerie').value)
+    const repeticoesSerie = Number.parseInt(document.getElementById('repeticoesSerie').value)
+
+    // verificar duplicatas
+    if (exercicios.some((ex) => ex.nome.toLowerCase() === name.toLowerCase())) {
+        showToast("Já existe um exercício com este nome", "error")
+        return
+    }
+
+    const exercicio = {
+        id: Date.now(),
+        nome,
+        series,
+        repeticoesSerie,
+        criadoEm: new Date.now().toISOString(),
+        concluidoEm: null,
+    }
+
+    exercicios.push(exercicio)
+    salvarExercicios()
+    limparFormulario()
+    showToast("Exercicio adicionado com sucesso!")
+}
+
+// limpar form
+function limparFormulario() {
+    document.getElementById("exercicioNome").reset()
+}
+
+function concluirExercicio() {
+    const exercicio = exercicios.find((ex) => ex.id === id)
+    if (exercicio && !exercicio.completado) {
+        exercicio.completado = true,
+        exercicio.completadoEm = new Date.toISOString()
+        salvarExercicios()
+        carregarExercicios()
+        atualizarStatus()
+        showToast("Exercício concluído! Parabéns!")
+    }
 }
 
 
