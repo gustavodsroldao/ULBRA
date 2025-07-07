@@ -149,7 +149,7 @@ function criarCardExercicio(exercicio) {
           </div>
           <div class="flex flex-col gap-2">
             ${!exercicio.concluido ? `<button data-id="${exercicio.id}" class="btn btn-success btn-concluir bg-green-600 text-white px-3 py-1 rounded">Concluir</button>` : ""}
-            <button data-id="${exercicio.id}" class="btn btn-danger btn-remover bg-red-600 text-white px-3 py-1 rounded">Remover</button>
+            ${!exercicio.concluido ? `<button data-id="${exercicio.id}" class="btn btn-danger btn-remover bg-red-600 text-white px-3 py-1 rounded">Remover</button>` : ""}
           </div>
         </div>
       </div>
