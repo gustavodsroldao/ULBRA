@@ -7,19 +7,254 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer components {
+        /* uso do layer components como foi ensinado em aula */
+        .body {
+            @apply bg-gray-50 min-h-screen;
+        }
+
+        .container {
+            @apply mx-auto px-4 py-8 max-w-4xl;
+        }
+
+        .header {
+            @apply text-center mb-8;
+        }
+
+        .header-title {
+            @apply text-4xl font-bold mb-2 text-gray-800;
+        }
+
+        .header-subtitle {
+            @apply text-gray-600;
+        }
+
+        .form-container {
+            @apply bg-white rounded-lg shadow-md p-6 mb-8;
+        }
+
+        .form-container h2 {
+            @apply text-2xl font-semibold mb-6 text-gray-800;
+        }
+
+        .form-style {
+            @apply flex flex-col w-full;
+        }
+
+        .form-label {
+            @apply text-sm font-medium text-gray-700 mb-2;
+        }
+
+        .form-error {
+            @apply text-red-500 text-sm mt-1 hidden;
+        }
+
+        .form-input-style {
+            @apply px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent;
+        }
+
+        .add-button {
+            @apply px-4 py-2 bg-orange-600 text-white rounded-md font-medium hover:bg-orange-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200;
+        }
+
+        .filter-container {
+            @apply bg-white rounded-lg shadow-md p-6 mb-8;
+        }
+
+        .filter-button-active {
+            @apply px-4 py-2 bg-orange-600 text-white border border-orange-600 rounded-md cursor-pointer transition-colors duration-200;
+        }
+
+        .filter-button {
+            @apply px-4 py-2 bg-orange-600 text-white border border-orange-600 rounded-md cursor-pointer transition-colors duration-200 hover:bg-gray-50;
+        }
+
+        .list-container {
+            @apply bg-white rounded-lg shadow-md p-6;
+        }
+
+        .list-title {
+            @apply text-2xl font-semibold mb-6 text-gray-800;
+        }
+
+        .empty-list-title {
+            @apply text-xl font-semibold text-gray-700 mb-2;
+        }
+
+        .empty-list-container {
+            @apply text-center py-12 px-4;
+        }
+
+        .stats-container {
+            @apply grid grid-cols-1 md:grid-cols-3 gap-4 mt-8;
+        }
+
+        .stats-total {
+            @apply bg-blue-50 rounded-lg p-6 text-center border border-blue-200;
+        }
+
+        .stats-pendente {
+            @apply bg-yellow-50 rounded-lg p-6 text-center border border-yellow-200;
+        }
+
+        .stats-concluido {
+            @apply bg-green-50 rounded-lg p-6 text-center border border-green-200;
+        }
+
+        .toast {
+            @apply fixed bottom-8 right-8 bg-gray-800 text-white px-6 py-4 rounded-lg shadow-lg transform translate-y-full opacity-0 transition-all duration-300 ease-in-out z-50;
+        }
+
+        }
+
+    </style>
 </head>
-<body class="bg-gray-50 min-h-screen">
-    <div class="container mx-auto px-4 py-8 mx-w-4xl">
+<body class="body">
+    <div class="container">
 
         <!-- Header -->
-        <header class="app-header">
-            <h1 class="app-title">Gerenciador de exercícios - AS 01/25</h1>
-            <p class="app-subtitle">
+        <header class="header">
+            <h1 class="header-title">Gerenciador de exercícios - AS 01/25</h1>
+            <p class="header-subtitle">
                 Monte seu treino de forma rápida e fácil.
             </p>
         </header>
 
         <!-- Formulario de cadastro do exercício -->
+        <div class="form-container">
+            <h2>Registrar novo exercício</h2>
+
+            <form id="exercicioForm" class="space-y-4">
+                <!-- Nome do exercício -->
+                <div class="form-style">
+                    <label for="exercicioNome" class="form-label">
+                        Nome do exercício
+                    </label>
+                    <input
+                    type="text"
+                    id="exercicioNome"
+                    name="exercicioNome"
+                    placeholder="Ex: Supino"
+                    class="form-input-style"
+                    required
+                    >
+                    <span id="nameError" class="form-error">O nome do exercício é obrigatório.</span>
+                </div>
+
+                <!-- Número de séries do exercício -->
+                <div class="form-style">
+                    <label for="numeroSerie" class="form-label">
+                        Número de séries
+                    </label>
+                    <input
+                    type="number"
+                    id="numeroSerie"
+                    name="numeroSerie"
+                    placeholder="Ex: 3"
+                    min="1"
+                    max="20"
+                    class="form-input-style"
+                    required
+                    >
+                    <span id="serieError" class="form-error">O número de séries deve ser entre 1 e 20.</span>
+                </div>
+
+                <!-- Repetições por série -->
+                <div class="form-style">
+                    <label for="repeticoesSerie" class="form-label">
+                        Número de repetições por série
+                    </label>
+                    <input
+                     type="number"
+                     id="repeticoesSerie"
+                     name="repeticoesSerie"
+                     placeholder="Ex: 12"
+                     min="1"
+                     max="15"
+                     class="form-input-style"
+                     required
+                     >
+                    <span id="repeticoesError" class="form-error">Repetições deve ser de 1 a 15.</span>
+                </div>
+
+                <!-- Botão de adicionar -->
+                <div class="flex justify-end mt-6">
+                    <button type="submit" class="add-button">
+                        Adicionar exercício
+                    </button>
+                </div>
+
+            </form>
+        </div>
+
+        <!-- Filtros -->
+        <div class="filter-container">
+            <div class="flex items-center gap-4 flex-wrap">
+                <span class="font-medium text-gray-700">Filtrar:</span>
+                <button id="filtrarTodos" class="filter-button-active">
+                    Todos (<span id="contarTodos">0</span>)
+                </button>
+                <button id="filtrarPendentes" class="filter-button">
+                    Pendentes (<span id="contarPendentes">0</span>)
+                </button>
+                <button id="filtrarConcluidos" class="filter-button">
+                    Concluídos (<span id="contarConcluidos">0</span>)
+                </button>
+            </div>
+        </div>
+
+        <!-- Lista dos exercícios-->
+        <div class="list-container">
+            <h2 class="list-title">Lista de exercícios</h2>
+
+            <!-- Lista vazia -->
+            <div id="listaVazia" class="empty-list-container">
+                <h3 class="empty-list-title">Nenhum exercício adicionado ainda.</h3>
+                <p class="text-gray-600">
+                    Adicione seu primeiro exercício
+                    usando o formulário acima.
+                </p>
+            </div>
+
+            <div id="exerciciosList" class="mb-8 hidden">
+                <!-- O conteúdo aparecerá aqui -->
+            </div>
+
+            <!-- Estatísticas -->
+            <div class="stats-container">
+                <div class="stats-total">
+                    <div class="text-3xl font-bold text-gray-800 mb-2" id="totalExercicios">0</div>
+                    <div class="text-gray-600 text-sm">Total de exercícios</div>
+                </div>
+                <div class="stats-pendente">
+                    <div class="text-3xl font-bold text-gray-800 mb-2" id="pendentesExercicios">0</div>
+                    <div class="text-gray-600 text-sm">Pendentes</div>
+                </div>
+                <div class="stats-conluido">
+                    <div class="text-3xl font-bold text-gray-800 mb-2" id="concluidosExercicios">0</div>
+                    <div class="text-gray-600 text-sm">Concluídos</div>
+                </div>
+            </div>
+
+            <!-- Toast de notificação -->
+            <div id="toast" class="toast">
+                <span id="toastMessage"></span>
+            </div>
+        </div>
+
+        <script src="./js/script.js"></script> 
     </div>
 </body>
 </html>
