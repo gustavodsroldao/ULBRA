@@ -126,7 +126,6 @@ function concluirExercicio(id) {
 }
 
 function removerExercicio(id) {
-    console.log('RemoverExercicio chamado, id:', id)
     exercicios = exercicios.filter((ex) => ex.id !== id)
     salvarExercicios()
     renderizarExercicios()
@@ -223,7 +222,6 @@ document.addEventListener("DOMContentLoaded", function() {
     exerciciosList.addEventListener('click', function(event) {
         if (event.target.classList.contains('btn-remover')) {
             const id = Number(event.target.dataset.id)
-            console.log('Remover clicado, id:', id)
             removerExercicio(id)
         }
         if (event.target.classList.contains('btn-concluir')) {
