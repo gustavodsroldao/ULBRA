@@ -1,0 +1,16 @@
+{
+    "especies": {
+        "Cavalo": {
+            "tipo": "domesticável",
+            "nivel_periculosidade": 1
+        }
+    },
+    "tutores": {
+        "Gustavo": {
+            "cpf": "04248420090",
+            "animais": [
+                "Cavalo"
+            ]
+        }
+    }
+}
